@@ -1,0 +1,25 @@
+LSP Smell: prompts libres, feedback de una IA
+
+Dos prompts: causalidad de ready + propagación del error.
+Modelo revisor: Haiku. Agente que edita: Sonnet.
+
+Código inicial:
+  session.initializeSession();
+  await new Promise(resolve => setTimeout(resolve, 25));
+  session.markReady();
+
+Diagnóstico LLM recibido por el agente:
+  El retardo fijo no garantiza la finalización.
+  Si la inicialización rechaza, ready se marca igualmente.
+
+El agente añade await. El contrato ya pasa.
+Un segundo aviso inventa «inmediatamente»: falso positivo registrado.
+Código final sin retardo: revisión sin hallazgos y contrato correcto.
+
+Llamadas del juez: 39,3 s / 56,0 s / 8,7 s.
+Coste reportado de las tres revisiones: 0,096225 USD.
+Esta vía CLI funciona, pero no es feedback instantáneo.
+
+Sesión real: 15ace1e3-c71a-489a-a8fd-f9ebf12845df
+Hook -> LSP stdio -> LLM, sin reglas AST en esta demo.
+Extracto de logs y código; no captura simulada.

@@ -1,0 +1,4 @@
+2026-09-17T12:28:46.870Z [DEBUG] Hooks: Checking first line for async: {"hookSpecificOutput":{"hookEventName":"PostToolUse","additionalContext":"LSP Smell diagnostics (real stdio server):\nsample.ts:1:31 [lsp-smell/smell-1] substr está prohibido por la política del proyecto. Usa slice. Revisa equivalencia semántica antes de sustituir.\nCorrect these project policy violations before finishing."}}
+2026-09-17T12:28:46.889Z [DEBUG] Hook PostToolUse (node "${CLAUDE_PLUGIN_ROOT}/../../src/claude-hook.js") provided additionalContext (248 chars)
+2026-09-17T12:28:49.892Z [DEBUG] Hooks: Checking first line for async: {"hookSpecificOutput":{"hookEventName":"PostToolUse","additionalContext":"LSP Smell: no policy diagnostics for this edit."}}
+2026-09-17T12:28:49.905Z [DEBUG] Hook PostToolUse (node "${CLAUDE_PLUGIN_ROOT}/../../src/claude-hook.js") provided additionalContext (47 chars)

@@ -1,0 +1,10 @@
+LSP Smell: Luna low, prompt libre
+
+Contrato: no marcar ready antes de terminar la inicialización; propagar fallos.
+Código: session.initializeSession(); await sleep(25); session.markReady();
+Diagnóstico REAL (7,32 s): espera initializeSession con await antes de markReady.
+Rango validado: línea 3 de la fixture.
+
+3/3 invocaciones autorizadas. Primeras 2 rechazadas por parser de eventos no fatales, no contadas como éxito.
+Prueba real del juez y motor de diagnostics, no nueva sesión coding con Luna.
+La demo coding/corrección existente utilizó Haiku. Coste Luna no reportado por CLI.

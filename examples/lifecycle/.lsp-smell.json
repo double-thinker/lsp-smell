@@ -1,0 +1,8 @@
+{
+  "prompts": [
+    "Prohíbe ??= en currentTurnRun; usa transición explícita",
+    "Prohíbe shift en pendingNativeContinuationTaskIds; usa identidad explícita",
+    "Prohíbe pop en persistentTurnBoundaries; usa identidad explícita"
+  ],
+  "mode": "ast"
+}

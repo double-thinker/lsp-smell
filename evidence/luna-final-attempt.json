@@ -1,0 +1,177 @@
+{
+  "requestedModel": "gpt-5.6-luna",
+  "requestedEffort": "low",
+  "note": "Codex JSONL does not attest backend model. Explicit model selected, no fallback. Two independent documents run concurrently; correlated prompts remain bundled. This is a real reviewer harness, not a new coding-agent session.",
+  "elapsedMs": 7320.175566,
+  "config": {
+    "mode": "llm",
+    "prompts": [
+      {
+        "id": "contract",
+        "prompt": "Report only violations of the explicit code comment contract. Do not invent requirements about immediacy. Check readiness and propagation of failure."
+      }
+    ],
+    "context": "",
+    "limits": {
+      "debounceMs": 0,
+      "maxConcurrency": 2,
+      "timeoutMs": 90000,
+      "maxDocumentChars": 32000,
+      "maxOutputBytes": 65536,
+      "maxFindings": 12,
+      "cacheEntries": 0,
+      "maxCalls": 3,
+      "maxTotalReservedUsd": 0.3,
+      "maxCallUsd": 0.1
+    },
+    "provider": {
+      "type": "codex-cli",
+      "command": "codex",
+      "model": "gpt-5.6-luna",
+      "effort": "low"
+    },
+    "budgetFile": ".lsp-smell-budget.json"
+  },
+  "results": [
+    {
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "state": "complete",
+      "diagnostics": [
+        {
+          "range": {
+            "start": {
+              "line": 2,
+              "character": 0
+            },
+            "end": {
+              "line": 2,
+              "character": 29
+            }
+          },
+          "severity": 2,
+          "source": "lsp-smell",
+          "code": "contract",
+          "message": "Espera (`await`) la inicialización antes de marcar la sesión como lista, para propagar sus fallos y evitar que `markReady()` se ejecute antes del éxito. [LLM, confianza 99%]",
+          "data": {
+            "confidence": 0.99,
+            "judge": true
+          }
+        }
+      ],
+      "elapsedMs": 7318.156231,
+      "cacheHit": false
+    }
+  ],
+  "events": [
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "diagnostics": []
+    },
+    {
+      "event": "status",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "state": "pending"
+    },
+    {
+      "event": "judge-start",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "budget": {
+        "calls": 3,
+        "reservedUsd": 0.3
+      }
+    },
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "diagnostics": [
+        {
+          "range": {
+            "start": {
+              "line": 2,
+              "character": 0
+            },
+            "end": {
+              "line": 2,
+              "character": 29
+            }
+          },
+          "severity": 2,
+          "source": "lsp-smell",
+          "code": "contract",
+          "message": "Espera (`await`) la inicialización antes de marcar la sesión como lista, para propagar sus fallos y evitar que `markReady()` se ejecute antes del éxito. [LLM, confianza 99%]",
+          "data": {
+            "confidence": 0.99,
+            "judge": true
+          }
+        }
+      ]
+    },
+    {
+      "event": "status",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "state": "complete",
+      "diagnostics": [
+        {
+          "range": {
+            "start": {
+              "line": 2,
+              "character": 0
+            },
+            "end": {
+              "line": 2,
+              "character": 29
+            }
+          },
+          "severity": 2,
+          "source": "lsp-smell",
+          "code": "contract",
+          "message": "Espera (`await`) la inicialización antes de marcar la sesión como lista, para propagar sus fallos y evitar que `markReady()` se ejecute antes del éxito. [LLM, confianza 99%]",
+          "data": {
+            "confidence": 0.99,
+            "judge": true
+          }
+        }
+      ],
+      "elapsedMs": 7318.156231,
+      "cacheHit": false
+    },
+    {
+      "event": "review-complete",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "diagnosticCount": 1,
+      "elapsedMs": 7318.156231,
+      "cacheHit": false,
+      "usage": {
+        "reportedCostUsd": null,
+        "requestedModel": "gpt-5.6-luna",
+        "requestedEffort": "low",
+        "modelVerifiedByResponse": false,
+        "nonFatalErrorItems": 2,
+        "tokens": {
+          "input_tokens": 7778,
+          "cached_input_tokens": 4864,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 222,
+          "reasoning_output_tokens": 144
+        }
+      }
+    },
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/bad.ts",
+      "diagnostics": []
+    }
+  ],
+  "budget": {
+    "calls": 3,
+    "reservedUsd": 0.3
+  }
+}

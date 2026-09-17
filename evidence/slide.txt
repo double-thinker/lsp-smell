@@ -1,0 +1,21 @@
+LSP Smell: del prompt al feedback de edición
+
+Regla: «Prohíbe substr; usa slice»
+
+Claude Edit
+  export const label = "Botijo".substr(1);
+
+LSP real por stdio, entregado vía PostToolUse
+  sample.ts:1:31 [lsp-smell/smell-1]
+  substr está prohibido por la política del proyecto. Usa slice.
+
+Claude Edit, tras recibir el diagnóstico
+  export const label = "Botijo".slice(1);
+
+Segunda comprobación: 0 diagnósticos.
+
+Sesión real: Claude Code 2.1.273 / Sonnet 5
+fcb3e5e0-4f49-459a-955a-ca8af37345f6
+Extracto de logs, no captura de interfaz.
+Reglas deterministas acotadas, no juez LLM.
+Hook síncrono + LSP: no multi-LSP nativo de Claude.

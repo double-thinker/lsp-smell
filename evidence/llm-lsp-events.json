@@ -1,0 +1,118 @@
+[
+  {
+    "event": "initialize",
+    "mode": "llm",
+    "promptIds": [
+      "causal-readiness",
+      "errors"
+    ],
+    "provider": {
+      "type": "claude-cli",
+      "model": "haiku"
+    }
+  },
+  {
+    "event": "judge-start",
+    "uri": "file:///demo/session.ts",
+    "version": 1,
+    "budget": {
+      "calls": 6,
+      "reservedUsd": 0.6
+    }
+  },
+  {
+    "event": "review-complete",
+    "uri": "file:///demo/session.ts",
+    "version": 1,
+    "diagnosticCount": 2,
+    "elapsedMs": 39341.539387000004,
+    "cacheHit": false,
+    "usage": {
+      "reportedCostUsd": 0.041210000000000004,
+      "models": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "durationMs": 38303
+    }
+  },
+  {
+    "event": "initialize",
+    "mode": "llm",
+    "promptIds": [
+      "causal-readiness",
+      "errors"
+    ],
+    "provider": {
+      "type": "claude-cli",
+      "model": "haiku"
+    }
+  },
+  {
+    "event": "judge-start",
+    "uri": "file:///demo/session.ts",
+    "version": 1,
+    "budget": {
+      "calls": 7,
+      "reservedUsd": 0.7
+    }
+  },
+  {
+    "event": "review-complete",
+    "uri": "file:///demo/session.ts",
+    "version": 1,
+    "diagnosticCount": 1,
+    "elapsedMs": 55976.279317,
+    "cacheHit": false,
+    "usage": {
+      "reportedCostUsd": 0.040325999999999994,
+      "models": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "durationMs": 54895
+    }
+  },
+  {
+    "event": "initialize",
+    "mode": "llm",
+    "promptIds": [
+      "causal-readiness",
+      "errors"
+    ],
+    "provider": {
+      "type": "claude-cli",
+      "model": "haiku"
+    }
+  },
+  {
+    "event": "judge-start",
+    "uri": "file:///demo/session.ts",
+    "version": 1,
+    "budget": {
+      "calls": 8,
+      "reservedUsd": 0.8
+    }
+  },
+  {
+    "event": "review-complete",
+    "uri": "file:///demo/session.ts",
+    "version": 1,
+    "diagnosticCount": 0,
+    "elapsedMs": 8667.348398,
+    "cacheHit": false,
+    "usage": {
+      "reportedCostUsd": 0.014689,
+      "models": [
+        "claude-haiku-4-5-20251001"
+      ],
+      "durationMs": 7047,
+      "apiDurationMs": 7734,
+      "turns": 1,
+      "tokens": {
+        "input": 10,
+        "output": 643,
+        "cacheRead": 0,
+        "cacheCreate": 4741
+      }
+    }
+  }
+]

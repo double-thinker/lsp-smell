@@ -1,0 +1,13 @@
+2026-09-17T13:47:48.892Z
+LSP Smell diagnostics (real stdio server):
+session.ts:9:1 [lsp-smell/causal-readiness] initializeSession() no se espera; el retardo fijo de 25ms no garantiza su finalización. Esperá la promesa de initializeSession() antes de marcar ready. [LLM, confianza 95%]
+session.ts:9:1 [lsp-smell/errors] Si initializeSession() rechaza, markReady() se ejecuta igual y el error no llega al llamador. Esperá initializeSession() y propaga su rechazo. [LLM, confianza 95%]
+These are fallible LLM review findings, not proven errors. Check the evidence and contract; correct supported issues before finishing.
+
+2026-09-17T13:48:49.282Z
+LSP Smell diagnostics (real stdio server):
+session.ts:10:1 [lsp-smell/causal-readiness] Retardo fijo innecesario entre initializeSession y markReady. El contrato exige que ready se marque inmediatamente DESPUÉS de inicialización exitosa sin demoras arbitrarias. Esta demora de 25ms viola la causalidad requerida. Elimina el timeout y marca ready directamente tras await initializeSession. [LLM, confianza 75%]
+These are fallible LLM review findings, not proven errors. Check the evidence and contract; correct supported issues before finishing.
+
+2026-09-17T13:49:02.100Z
+LSP Smell: no policy diagnostics for this edit.

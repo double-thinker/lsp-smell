@@ -1,0 +1,27 @@
+{
+  "prompts": [
+    {
+      "id": "ownership",
+      "prompt": "Revisa cambios de propietario de turnos o tareas. Un nuevo turno no debe heredar silenciosamente al propietario anterior ni atribuir eventos por orden de llegada. Busca fallos semánticos aunque cambien los nombres de variables. Respeta el contrato documentado; señala solo problemas apoyados por el código disponible y explica la condición bajo la que fallaría."
+    },
+    {
+      "id": "readiness",
+      "prompt": "Comprueba si se está usando el tiempo transcurrido, un sleep o un timeout como prueba de que otra operación terminó o está lista. Distingue un watchdog que falla explícitamente de un temporizador que inventa éxito. No marques timers legítimos solo por su forma."
+    }
+  ],
+  "provider": {
+    "type": "codex-cli",
+    "command": "codex",
+    "model": "gpt-5.6-luna",
+    "effort": "low"
+  },
+  "limits": {
+    "debounceMs": 350,
+    "maxConcurrency": 2,
+    "timeoutMs": 45000,
+    "maxCalls": 12,
+    "maxCallUsd": 0.1,
+    "maxTotalReservedUsd": 1.2,
+    "cacheEntries": 0
+  }
+}

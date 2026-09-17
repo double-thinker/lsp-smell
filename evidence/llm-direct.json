@@ -1,0 +1,45 @@
+{
+  "elapsedMs": 65117.037267,
+  "diagnostics": [
+    {
+      "range": {
+        "start": {
+          "line": 8,
+          "character": 0
+        },
+        "end": {
+          "line": 10,
+          "character": 22
+        }
+      },
+      "severity": 2,
+      "source": "lsp-smell",
+      "code": "causal-readiness",
+      "message": "initializeSession() sin await; timeout fijo (25ms) no garantiza que markReady ocurra después que la promesa termine. Viola causalidad requerida. Usar: await session.initializeSession(); antes de session.markReady(); [LLM, confianza 95%]",
+      "data": {
+        "confidence": 0.95,
+        "judge": true
+      }
+    },
+    {
+      "range": {
+        "start": {
+          "line": 8,
+          "character": 0
+        },
+        "end": {
+          "line": 10,
+          "character": 22
+        }
+      },
+      "severity": 2,
+      "source": "lsp-smell",
+      "code": "errors",
+      "message": "Si initializeSession() rechaza, startSession continúa ejecutando y emite ready, ocultando el error. El rechazo no se propaga al caller. Usar: await session.initializeSession(); para que el rechazo se propague. [LLM, confianza 95%]",
+      "data": {
+        "confidence": 0.95,
+        "judge": true
+      }
+    }
+  ]
+}

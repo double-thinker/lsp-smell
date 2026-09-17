@@ -1,0 +1,1 @@
+{"smell":{"command":"node","args":["${CLAUDE_PLUGIN_ROOT}/src/server.js","--stdio"],"extensionToLanguage":{".ts":"typescript",".tsx":"typescriptreact",".js":"javascript",".jsx":"javascriptreact"}}}

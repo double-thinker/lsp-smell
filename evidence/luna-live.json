@@ -1,0 +1,181 @@
+{
+  "requestedModel": "gpt-5.6-luna",
+  "requestedEffort": "low",
+  "note": "Codex JSONL does not attest backend model. Explicit model selected, no fallback. Two independent documents run concurrently; correlated prompts remain bundled. This is a real reviewer harness, not a new coding-agent session.",
+  "elapsedMs": 7958.459328,
+  "config": {
+    "mode": "llm",
+    "prompts": [
+      {
+        "id": "contract",
+        "prompt": "Report only violations of the explicit code comment contract. Do not invent requirements about immediacy. Check readiness and propagation of failure."
+      }
+    ],
+    "context": "",
+    "limits": {
+      "debounceMs": 0,
+      "maxConcurrency": 2,
+      "timeoutMs": 90000,
+      "maxDocumentChars": 32000,
+      "maxOutputBytes": 65536,
+      "maxFindings": 12,
+      "cacheEntries": 0,
+      "maxCalls": 3,
+      "maxTotalReservedUsd": 0.3,
+      "maxCallUsd": 0.1
+    },
+    "provider": {
+      "type": "codex-cli",
+      "command": "codex",
+      "model": "gpt-5.6-luna",
+      "effort": "low"
+    },
+    "budgetFile": ".lsp-smell-budget.json"
+  },
+  "results": [
+    {
+      "uri": "file:///demo/good.ts",
+      "version": 1,
+      "state": "failed",
+      "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio."
+    },
+    {
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "state": "failed",
+      "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio."
+    }
+  ],
+  "events": [
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "diagnostics": []
+    },
+    {
+      "event": "status",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "state": "pending"
+    },
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/good.ts",
+      "version": 1,
+      "diagnostics": []
+    },
+    {
+      "event": "status",
+      "uri": "file:///demo/good.ts",
+      "version": 1,
+      "state": "pending"
+    },
+    {
+      "event": "judge-start",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "budget": {
+        "calls": 1,
+        "reservedUsd": 0.1
+      }
+    },
+    {
+      "event": "judge-start",
+      "uri": "file:///demo/good.ts",
+      "version": 1,
+      "budget": {
+        "calls": 2,
+        "reservedUsd": 0.2
+      }
+    },
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/good.ts",
+      "version": 1,
+      "diagnostics": [
+        {
+          "range": {
+            "start": {
+              "line": 0,
+              "character": 0
+            },
+            "end": {
+              "line": 0,
+              "character": 0
+            }
+          },
+          "severity": 3,
+          "source": "lsp-smell",
+          "code": "review-unavailable",
+          "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio."
+        }
+      ]
+    },
+    {
+      "event": "status",
+      "uri": "file:///demo/good.ts",
+      "version": 1,
+      "state": "failed",
+      "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio."
+    },
+    {
+      "event": "review-failed",
+      "uri": "file:///demo/good.ts",
+      "version": 1,
+      "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio.",
+      "elapsedMs": 4197.292421
+    },
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "diagnostics": [
+        {
+          "range": {
+            "start": {
+              "line": 0,
+              "character": 0
+            },
+            "end": {
+              "line": 0,
+              "character": 0
+            }
+          },
+          "severity": 3,
+          "source": "lsp-smell",
+          "code": "review-unavailable",
+          "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio."
+        }
+      ]
+    },
+    {
+      "event": "status",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "state": "failed",
+      "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio."
+    },
+    {
+      "event": "review-failed",
+      "uri": "file:///demo/bad.ts",
+      "version": 1,
+      "message": "LSP Smell: revisión incompleta (Judge attempted a tool operation). No es un resultado limpio.",
+      "elapsedMs": 7957.513094
+    },
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/bad.ts",
+      "diagnostics": []
+    },
+    {
+      "event": "diagnostics",
+      "uri": "file:///demo/good.ts",
+      "diagnostics": []
+    }
+  ],
+  "budget": {
+    "calls": 2,
+    "reservedUsd": 0.2
+  }
+}

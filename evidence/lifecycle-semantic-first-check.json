@@ -1,0 +1,5 @@
+{
+  "contract": "openTurn is invoked only after predecessor completed; retained old slot must not block new owner",
+  "passed": false,
+  "error": "Cannot open turn B: turn A is still active"
+}

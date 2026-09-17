@@ -1,0 +1,8 @@
+{
+  "original_fixture": "unsafe: marks ready after a fixed delay while init may be pending",
+  "intermediate_contract_check": "PASS: pending does not mark ready; success marks ready; failure rejects without ready.",
+  "final_contract_check": "PASS: pending does not mark ready; success marks ready; failure rejects without ready.",
+  "false_positive": "Immediate readiness was not required; delay after awaited initialization does not violate ordering or error propagation. Second warning is not a supported violation.",
+  "evidence": "Executed scripts/check-semantic.js separately against both retained TS snapshots.",
+  "original_contract_check": "FAIL: ready must not be marked while initialization is pending (actual Node assertion exit 1)"
+}

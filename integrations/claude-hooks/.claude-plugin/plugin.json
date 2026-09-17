@@ -1,0 +1,5 @@
+{
+  "name": "lsp-smell-feedback",
+  "version": "0.2.0",
+  "description": "PostToolUse adapter: real LSP diagnostics without claiming a language extension"
+}

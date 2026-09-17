@@ -1,0 +1,28 @@
+{
+  "prompts": [
+    {
+      "id": "causal-readiness",
+      "prompt": "Revisa la causalidad del estado ready. El contrato exige que markReady ocurra solo DESPUÉS de que termine initializeSession correctamente. Un retardo fijo no demuestra que la promesa haya terminado. Señala el incumplimiento concreto y recomienda esperar la operación; no marques un timeout que simplemente falla ni asumas que cualquier timer es incorrecto."
+    },
+    {
+      "id": "errors",
+      "prompt": "Comprueba que si initializeSession rechaza, no se emite ready ni se oculta el error. Si el caller recibe la promesa rechazada, eso satisface propagación del fallo. No exijas logging extra."
+    }
+  ],
+  "context": "startSession debe resolver tras inicializar y marcar ready. Si la inicialización falla, debe rechazar sin marcar ready. No hay garantías de duración de initializeSession.",
+  "provider": {
+    "type": "claude-cli",
+    "command": "claude",
+    "model": "haiku",
+    "effort": "low"
+  },
+  "limits": {
+    "debounceMs": 100,
+    "timeoutMs": 90000,
+    "maxCalls": 8,
+    "maxCallUsd": 0.1,
+    "maxTotalReservedUsd": 0.8,
+    "maxConcurrency": 1,
+    "cacheEntries": 0
+  }
+}

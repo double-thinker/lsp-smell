@@ -1,0 +1,10 @@
+{
+  "session_id": "83f981e0-9ca2-4016-a425-72ec633e0b06",
+  "integration": "scripts/demo-claude.sh from .demo working directory",
+  "result": "An LSP diagnostic flagged `.substr(1)` as banned by project policy, recommending `.slice`. Since `.slice(1)` is semantically equivalent here (single positive start index, no length arg), I replaced it with `\"Botijo\".slice(1)`, which still evaluates to `\"otijo\"`. No further diagnostics were reported.",
+  "is_error": false,
+  "diagnostic_counts": [
+    1,
+    0
+  ]
+}

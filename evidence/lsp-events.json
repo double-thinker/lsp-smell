@@ -1,0 +1,50 @@
+[
+  {
+    "event": "initialize",
+    "rules": [
+      "smell-1",
+      "smell-2"
+    ]
+  },
+  {
+    "event": "diagnostics",
+    "uri": "file:///demo/sample.ts",
+    "version": 1,
+    "elapsedMs": 8.455889999999954,
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 0,
+            "character": 30
+          },
+          "end": {
+            "line": 0,
+            "character": 36
+          }
+        },
+        "severity": 2,
+        "source": "lsp-smell",
+        "code": "smell-1",
+        "message": "substr está prohibido por la política del proyecto. Usa slice. Revisa equivalencia semántica antes de sustituir.",
+        "data": {
+          "prompt": "Prohíbe substr; usa slice"
+        }
+      }
+    ]
+  },
+  {
+    "event": "initialize",
+    "rules": [
+      "smell-1",
+      "smell-2"
+    ]
+  },
+  {
+    "event": "diagnostics",
+    "uri": "file:///demo/sample.ts",
+    "version": 1,
+    "elapsedMs": 8.628259999999955,
+    "diagnostics": []
+  }
+]

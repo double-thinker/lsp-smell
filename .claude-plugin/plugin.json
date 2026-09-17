@@ -1,0 +1,5 @@
+{
+  "name": "lsp-smell",
+  "version": "0.2.0",
+  "description": "Project policy diagnostics over stdio LSP"
+}

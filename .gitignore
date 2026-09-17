@@ -1,0 +1,8 @@
+node_modules/
+evidence/raw*
+.demo/
+
+sample.ts
+evidence/latest
+
+.lsp-smell-budget.json*

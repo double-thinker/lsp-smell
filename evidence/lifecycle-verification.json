@@ -1,0 +1,11 @@
+{
+  "structural_diagnostic_counts": [
+    1,
+    0,
+    0
+  ],
+  "first_repair_semantic_contract": "FAIL (retained A blocked B)",
+  "same_session_repair_semantic_contract": "PASS (A completed -> B current)",
+  "checked_by": "node scripts/check-lifecycle.js",
+  "model_final_code": "lifecycle-final.ts"
+}

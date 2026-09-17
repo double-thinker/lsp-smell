@@ -1,0 +1,17 @@
+{
+  "name": "lsp-smell",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Free-form prompt LLM reviewers with asynchronous LSP diagnostics",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/server.js --stdio"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3",
+    "vscode-jsonrpc": "^8.2.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
+  }
+}

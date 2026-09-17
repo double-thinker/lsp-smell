@@ -1,0 +1,23 @@
+{
+  "session_id": "fcb3e5e0-4f49-459a-955a-ca8af37345f6",
+  "model": "claude-sonnet-5",
+  "claude_code": "2.1.273",
+  "integration": "PostToolUse hook -> real stdio LSP -> additionalContext",
+  "edits": [
+    {
+      "file": "sample.ts",
+      "old": "export const label = \"Refresco\".substr(2);",
+      "new": "export const label = \"Botijo\".substr(1);",
+      "timestamp": "2026-09-17T12:28:46.180Z"
+    },
+    {
+      "file": "sample.ts",
+      "old": "export const label = \"Botijo\".substr(1);",
+      "new": "export const label = \"Botijo\".slice(1);",
+      "timestamp": "2026-09-17T12:28:49.242Z"
+    }
+  ],
+  "final_answer": "Feedback received: `sample.ts:1:31 [lsp-smell/smell-1] substr está prohibido por la política del proyecto. Usa slice. Revisa equivalencia semántica antes de sustituir.`\n\nThis flagged `\"Botijo\".substr(1)` as a policy violation. I replaced it with `\"Botijo\".slice(1)`, which is semantically equivalent (both return `\"otijo\"`), and the follow-up check reported no diagnostics.",
+  "duration_ms": 10355,
+  "reported_list_price_usd": 0.10444780000000001
+}

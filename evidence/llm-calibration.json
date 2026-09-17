@@ -1,0 +1,29 @@
+{
+  "before_success": [
+    {
+      "attempts": [
+        1,
+        2,
+        3
+      ],
+      "result": "configured 45 s watchdog expired; review failed, not clean"
+    },
+    {
+      "attempt": 4,
+      "result": "two semantic findings",
+      "wallMs": 65117.037267,
+      "judgeReportedUsd": 0.0692567
+    },
+    {
+      "attempt": 5,
+      "result": "valid model JSON wrapped in Markdown; parser rejected before fence support"
+    }
+  ],
+  "budget_final": {
+    "calls": 8,
+    "reservedUsd": 0.8
+  },
+  "budget_not_reset": true,
+  "cancelled_or_parser_failed_call_costs": "unknown; not represented as free",
+  "connectivity_probe_reported_usd": 0.016923
+}

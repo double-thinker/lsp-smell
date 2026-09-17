@@ -1,0 +1,21 @@
+LSP Smell: feedback sobre un fallo real de ownership
+
+Antecedente: agent-runtime, L-01. Patrón documentado en SDK y PTY.
+  this.currentTurnRun ??= activeRun;
+  Si A sigue en el slot, B no se convierte en propietario.
+
+Regla opt-in:
+  «Prohíbe ??= en currentTurnRun; usa transición explícita»
+
+Demo real, fixture sembrada deliberadamente:
+  Claude añade un campo -> recibe diagnóstico LSP -> cambia la transición.
+  Primer arreglo: lint verde, contrato A completado -> B FALLA.
+  Test informa del fallo -> misma sesión corrige -> contrato PASA.
+
+Código final:
+  openTurn(run: string) { this.currentTurnRun = run; }
+
+Feedback temprano, no una prueba de corrección semántica.
+Claude Code 2.1.273 / Sonnet 5 / hook a LSP stdio.
+Sesión: 0a5162ae-f357-4538-abcd-47c4066719c4
+Extracto de evidencia real, no captura ni conversación simulada.
